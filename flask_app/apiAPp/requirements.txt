@@ -1,0 +1,8 @@
+Flask
+Flask-RESTful
+FLASK-JWT
+Flask-SQLAlchemy
+firebase_admin==5.1.0
+twilio
+pyrebase4
+uwsgi
