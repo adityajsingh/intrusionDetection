@@ -71,23 +71,8 @@ def uploadIMageFirebase():
 
     client = Client(twilio_sid, twilio_secret)
 
-    urllib.request.urlretrieve(url, "image.jpg")
-
-    img = image.load_img("image.jpg", target_size=(64,64))
-    x = image.img_to_array(img)
-    x = np.expand_dims(x, axis=0)
-    preds = model.predict(x)
-
-    print('prediction: ', preds)
-
-    index = ['Cow', 'elepant', 'Human']
-
-    print(np.argmax(preds))
-
-    text = str(index[np.argmax(preds)])
-
-    if np.argmax(preds) != 2:
-        message_twilio = client.messages.create(
+    
+    message_twilio = client.messages.create(
     body="Intruder detected please check your phone",
     from_=my_number,
     to=other_number)
