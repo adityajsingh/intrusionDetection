@@ -6,12 +6,6 @@ import time
 import urllib.request
 
 
-import numpy as np
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing import image
-import tensorflow as tf
-
-model = load_model('animal_custom.h5')
 
 cred = credentials.Certificate("E:/IoT J comp/flask_app/apiAPp/serviceAccountKey.json")
 firebase_admin.initialize_app(cred)
@@ -40,10 +34,6 @@ my_image = "test.jpg"
 
 # importing the twilio library
 from twilio.rest import Client
-
-
-
-
 
 @app.route('/uploadImage', methods=['GET'])
 def uploadIMageFirebase():
